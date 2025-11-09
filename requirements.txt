@@ -1,5 +1,5 @@
 mysql-connector-python==9.0.0
 
-sudo apt update
-sudo apt install mysql-server -y
-sudo service mysql start
+#sudo apt update
+#sudo apt install mysql-server -y
+#sudo service mysql start
