@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📚 Library Management System (Python + MySQL)
 
 A simple CLI-based Library Management System built using **Python** and **MySQL**.
@@ -20,3 +21,6 @@ A simple CLI-based Library Management System built using **Python** and **MySQL*
    ```bash
    mysql -u root -p < database.sql
    
+=======
+# PyLibrarySystem
+>>>>>>> e3b675bd6030fbb0be88bba96c03b7a87cf3c216
