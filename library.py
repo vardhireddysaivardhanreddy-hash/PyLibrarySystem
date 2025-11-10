@@ -1,14 +1,17 @@
 import mysql.connector
+import os
 from datetime import date
 
 # Connect to MySQL
 conn = mysql.connector.connect(
     host="localhost",
-    user="root",
-    password="Varuntej@2003",       # enter your MySQL password
-    database="Library"
+    user="library_user",
+    password="Password@123",
+    database="library"
 )
+
 cur = conn.cursor()
+
 
 def add_book():
     title = input("Enter Book Title: ")
@@ -60,6 +63,9 @@ def return_book():
 
 def delete_book():
     book_id = int(input("Enter Book ID to delete: "))
+    # First, delete issued records for this book
+    cur.execute("DELETE FROM issued_books WHERE book_id = %s", (book_id,))
+    # Then, delete the book itself
     cur.execute("DELETE FROM books WHERE book_id = %s", (book_id,))
     conn.commit()
     print("✅ Book deleted successfully!\n")
